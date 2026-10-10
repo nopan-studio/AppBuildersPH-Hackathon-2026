@@ -1,0 +1,19 @@
+# Core
+pillow>=9.0
+numpy>=1.23
+paddleocr>=3.7
+ollama>=0.4
+openpyxl>=3.1
+
+# Web API + UI backend (`bookyp serve`)
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+
+# PaddlePaddle runtime backend is installed separately (pick one):
+#   CPU:             paddlepaddle==3.3.1
+#   GPU (CUDA 13):   uv pip install "paddlepaddle-gpu==3.3.1" \
+#                      --index-url https://www.paddlepaddle.org.cn/packages/stable/cu130/
+#   GPU (CUDA 12.9): .../cu129/    GPU (CUDA 12.6): .../cu126/
+# The OCR engine auto-selects GPU when Paddle is CUDA-enabled (override with
+# BOOKYP_OCR_DEVICE=cpu|gpu:0).

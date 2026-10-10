@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bookyp"
+version = "0.1.0"
+description = "Bookyp - offline receipt image OCR to validated JSON"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "pillow>=9.0",
+    "numpy>=1.23",
+    "paddleocr>=3.7",
+    "ollama>=0.4",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+web = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "python-multipart>=0.0.9"]
+
+[project.scripts]
+bookyp = "bookyp.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["bookyp*"]
